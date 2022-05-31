@@ -1,27 +1,13 @@
 'use strict';
 
-let lang = 'en';
-if (lang == 'ru') {
-    console.log("Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье");
-} else if (lang == 'en') {
-    console.log("Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday");
+let str = "Задание 4";
+
+const lesson4 = function (argument) {
+    if (typeof argument !== "string") {
+        return "Введена не строка";
+    }
+    argument.trim();
+    return argument.length > 50 ? argument.slice(0, 30) + '...' : argument;
 }
 
-switch (lang) {
-    case 'ru':
-        console.log("Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье");
-        break
-    case 'en':
-        console.log("Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday");
-        break
-}
-
-let langArray = {
-    'ru': ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
-    'en': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-};
-console.log(langArray[lang]);
-
-let namePerson = "Артем";
-let result = namePerson === "Артем" ? "Директор" : namePerson === "Александр" ? "Преподаватель" : "Студент";
-console.log(result);
+console.log(lesson4(str));
