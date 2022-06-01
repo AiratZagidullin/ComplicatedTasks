@@ -1,13 +1,22 @@
 'use strict';
 
-let str = "Задание 4";
+let arr = ['244', '1420', '521', '645', '2115', '421', '923'];
 
-const lesson4 = function (argument) {
-    if (typeof argument !== "string") {
-        return "Введена не строка";
+for (let num of arr) {
+    if (num.substring(0, 1) == '2' || num.substring(0, 1) == '4') {
+        console.log(num)
     }
-    argument.trim();
-    return argument.length > 50 ? argument.slice(0, 30) + '...' : argument;
 }
 
-console.log(lesson4(str));
+for (let i = 2; i < 100; i++) {
+    let prime = true;
+    for (let j = 2; j < i; j++) {
+        if (i % j == 0) {
+            prime = false;
+            break
+        }
+    }
+    if (prime) {
+        console.log("Делители для числа " + i + ": 1 и " + i);
+    }
+}
