@@ -1,22 +1,17 @@
 'use strict';
 
-let arr = ['244', '1420', '521', '645', '2115', '421', '923'];
+let week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+const date = new Date();
+const today = date.getDay() - 1;
 
-for (let num of arr) {
-    if (num.substring(0, 1) == '2' || num.substring(0, 1) == '4') {
-        console.log(num)
+for (let i = 0; i < 7; i++) {
+    if (i > 4) {
+        week[i] = `<i>${week[i]}</i>`;
+    }
+
+    if (i === today) {
+        week[i] = `<b>${week[i]}</b>`;
     }
 }
 
-for (let i = 2; i < 100; i++) {
-    let prime = true;
-    for (let j = 2; j < i; j++) {
-        if (i % j == 0) {
-            prime = false;
-            break
-        }
-    }
-    if (prime) {
-        console.log("Делители для числа " + i + ": 1 и " + i);
-    }
-}
+document.write(week.join("<br/>"));
